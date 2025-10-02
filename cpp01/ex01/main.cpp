@@ -2,8 +2,6 @@
 
 int main ()
 {
-    Zombie *zombie =  newZombie("ZAYN");
-    randomChump("ZOMBIE HAHA");
-    zombie->announce();
-    delete zombie;
+    Zombie *zombie =  zombieHorde(16 , "ILYAS");
+    delete  zombie;
 }

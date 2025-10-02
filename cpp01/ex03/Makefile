@@ -1,5 +1,5 @@
 PRGRM = zombie
-SRCS =  main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRCS =  main.cpp  HumanB.cpp HumanA.cpp Weapon.cpp
 OSRCS = $(SRCS:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror --std=c++98
