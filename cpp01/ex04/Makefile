@@ -1,5 +1,5 @@
-PRGRM = phonebook
-SRCS =  PhoneBook.cpp Contact.cpp main.cpp utils.cpp
+PRGRM = sed
+SRCS =  main.cpp  MySed.cpp
 OSRCS = $(SRCS:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror --std=c++98
@@ -15,5 +15,3 @@ clean :
 
 fclean : clean
 	rm -rf $(PRGRM)
-
-re : fclean all

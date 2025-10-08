@@ -4,7 +4,7 @@ int PhoneBook::size = 0;
 
 void PhoneBook ::print_key_value(string key, string value)
 {
-    cout << setw(15) << left << key;
+    cout << setw(15) << left   << key;
     cout << " : " << value << endl;
 }
 void PhoneBook::one_field_per_line(Contact contact, int index)
@@ -42,12 +42,13 @@ int PhoneBook::display_string_truncated(string s)
         cout << ".";
         return (10);
     }
-    cout << setw(10) << left << s;
+    cout << setw(10) 
+     << s;
     return (s.length());
 }
 void PhoneBook::display_one_contact_truncated(Contact contact, int index)
 {
-    cout << setw(10) << left << index;
+    cout << setw(10) << index;
     cout << "|";
     display_string_truncated(contact.get_first_name());
     cout << "|";
@@ -125,6 +126,11 @@ int PhoneBook::search()
         index++;
     }
     option = ft_icin("Please select an index of contact u want to display : ");
+    if (option < 0)
+    {
+        number_error_message(option);
+        return (1);
+    }
     if (cin.eof())
         return (0);
     if (option < 0 || option >= PhoneBook::size)

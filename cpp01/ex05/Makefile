@@ -1,5 +1,5 @@
-PRGRM = account
-SRCS =  Account.cpp tests.cpp 
+PRGRM = sed
+SRCS =  main.cpp Harl.cpp
 OSRCS = $(SRCS:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror --std=c++98

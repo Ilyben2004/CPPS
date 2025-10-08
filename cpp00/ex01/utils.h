@@ -15,5 +15,6 @@ void eof_detected();
 string ft_scin(string text);
 int ft_icin(string text);
 std::string trim(std::string str);
+void number_error_message(int option);
 
 #endif

@@ -1,9 +1,19 @@
-PRGRM = megaphone
+PRGRM = megaphone 
 SRCS = megaphone.cpp
-CC = c++
-FLAGS  = -Wall -Wextra -Werror
-all : 
-	$(CC) $(FLAGS) $(SRCS) -o $(PRGRM)
+OSRCS = $(SRCS:.cpp=.o)
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror --std=c++98
 
-fclean : 
+all : $(PRGRM)
+
+$(PRGRM) : $(OSRCS)
+	$(CXX) $(CXXFLAGS) $(OSRCS) -o $(PRGRM)
+
+
+clean : 
+	rm -rf $(OSRCS)
+
+fclean : clean
 	rm -rf $(PRGRM)
+
+re : fclean all

@@ -9,7 +9,6 @@ private:
     static int size;
 
     void replace_oldest_with_newest(Contact new_contact);
-    string get_truncaed_string(string s);
     int display_string_truncated(string s);
     void display_one_contact_truncated(Contact contact, int index);
     void display_one_contact_full(Contact contact, int index);
