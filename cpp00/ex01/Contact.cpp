@@ -1,8 +1,8 @@
-#include "utils.h"
-using namespace std;
+#include "Contact.hpp"
 
 Contact::Contact() {}
-Contact::Contact(string first_name, string last_name, string nickname, string phonenumber, string darkest_secret)
+
+Contact::Contact(std :: string first_name, std :: string last_name, std :: string nickname, std :: string phonenumber, std :: string darkest_secret)
 {
     this->first_name = first_name;
     this->last_name = last_name;
@@ -10,23 +10,23 @@ Contact::Contact(string first_name, string last_name, string nickname, string ph
     this->phone_number = phonenumber;
     this->darkest_secret = darkest_secret;
 }
-string Contact::get_first_name()
-{
-    return this->first_name;
-}
-string Contact::get_last_name()
-{
-    return this->last_name;
-}
-string Contact::get_nickname()
-{
-    return this->nickname;
-}
-string Contact::get_phone_number()
-{
-    return this->phone_number;
-}
-string Contact::get_darkest_secret()
-{
-    return this->darkest_secret;
-}
+
+std ::string Contact::get_first_name() { return this->first_name; }
+
+std ::string Contact::get_last_name() { return this->last_name; }
+
+std ::string Contact::get_nickname() { return this->nickname; }
+
+std ::string Contact::get_phone_number() { return this->phone_number; }
+
+std ::string Contact::get_darkest_secret() { return this->darkest_secret; }
+
+void Contact ::set_first_name(std ::string _first_name) { this->first_name = _first_name; }
+
+void Contact ::set_last_name(std ::string _last_name) { this->last_name = _last_name; }
+
+void Contact ::set_nickname(std ::string _nickname) { this->nickname = _nickname; }
+
+void Contact ::set_phone_number(std ::string _phone_number) { this->phone_number = _phone_number; }
+
+void Contact ::set_darkest_secret(std ::string _darkest_secret) { this->darkest_secret = _darkest_secret; }

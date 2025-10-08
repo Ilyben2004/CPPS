@@ -1,6 +1,6 @@
 #include "utils.h"
 
-bool is_number(string number)
+bool is_number(std :: string number)
 {
     int i;
 
@@ -13,7 +13,7 @@ bool is_number(string number)
     }
     return (true);
 }
-int string_isspace(string s)
+int string_isspace(std :: string s)
 {
     int i = 0;
     while (s[i])
@@ -24,12 +24,6 @@ int string_isspace(string s)
             return (0);
     }
     return (1);
-}
-void eof_detected()
-{
-    cout << endl;
-    cout << "BYE BYE";
-    std::exit(EXIT_FAILURE);
 }
 
 std::string trim(std::string str)
@@ -47,16 +41,14 @@ std::string trim(std::string str)
     return str.substr(beg, end - beg + 1);
 }
 
-string ft_scin(string text)
+std :: string ft_scin(std :: string text)
 {
-    string input;
-    cout << text;
-    if ((!getline(std ::cin, input)))
-    {
-        return ("");
-    }
-    if (string_isspace(input))
-        return (ft_scin(text));
+    std :: string input;
+    std :: cout << text;
+    if(!getline(std ::cin, input))
+        return("");
+   if (string_isspace(input))
+        return (ft_scin(text)); 
     input = trim(input);
     return (input);
 }
@@ -64,20 +56,20 @@ string ft_scin(string text)
 void number_error_message(int option)
 {
     if (option == OUT_OF_RANGE_ERROR)
-        cout << OUT_OF_RANGE_EMESSAGE;
+        std :: cout << OUT_OF_RANGE_EMESSAGE;
     else if (option == NEGATIVE_SIGNED)
-        cout << NEGATIVE_SIGNED_EMESSAGE;
+        std :: cout << NEGATIVE_SIGNED_EMESSAGE;
     else
-        cout << NOT_A_NUMBER_EMESSAGE;
+        std :: cout << NOT_A_NUMBER_EMESSAGE;
 }
-int ft_icin(string text)
+int ft_icin(std :: string text)
 {
     int input;
     int i;
 
     i = 0;
     input = 0;
-    string sinput;
+    std :: string sinput;
     sinput = ft_scin(text);
     if (sinput.empty())
         return (-1);
