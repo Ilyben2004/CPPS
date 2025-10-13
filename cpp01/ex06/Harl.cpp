@@ -28,10 +28,21 @@ void Harl ::complain(std ::string level)
     while (i < 4)
     {
         if (level.compare(levels[i]) == 0)
-        {
-            (this->*prtFunction[i])();
             break;
-        }
         i++;
+    }
+
+    switch (i)
+    {
+    case 0:
+        (this->*prtFunction[0])();
+    case 1:
+        (this->*prtFunction[1])();
+    case 2:
+        (this->*prtFunction[2])();
+    case 3  :
+        (this->*prtFunction[3])();
+    default : 
+        std :: cout << level << " is not a level" << std :: endl;
     }
 }

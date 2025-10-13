@@ -5,8 +5,8 @@
 class MySed
 {
 private:
-    char *infile;
-    char *outfile;
+    std :: string infile;
+    std :: string outfile;
     std ::string to_find;
     std ::string to_replace;
     bool error_check;
@@ -17,6 +17,6 @@ private:
 
 public:
     bool ft_sed();
-    MySed(char *_infile, char *_outfile, std ::string _to_find, std ::string _to_replace);
+    MySed(std :: string _infile, std ::string _to_find, std ::string _to_replace);
     ~MySed();
 };

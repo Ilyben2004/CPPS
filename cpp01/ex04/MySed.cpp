@@ -1,9 +1,9 @@
 #include "MySed.hpp"
 
-MySed ::MySed(char *_infile, char *_outfile, std ::string _to_find, std ::string _to_replace)
+MySed ::MySed(std :: string _infile,  std ::string _to_find, std ::string _to_replace)
 {
     infile = _infile;
-    outfile = _outfile;
+    outfile = infile + ".replace";
     to_find = _to_find;
     to_replace = _to_replace;
     error_check = true;
@@ -11,7 +11,7 @@ MySed ::MySed(char *_infile, char *_outfile, std ::string _to_find, std ::string
 
 std ::string MySed ::getFileContent()
 {
-    std ::ifstream file(infile);
+    std ::ifstream file(infile.c_str());
     std ::string content;
     std ::string line;
     char c;
@@ -20,6 +20,7 @@ std ::string MySed ::getFileContent()
     {
         std ::cout << "Failed To Open The File " << infile << std ::endl;
         error_check = false;
+        return ("");
     }
     while (file.get(c))
         content += c;
@@ -51,7 +52,7 @@ std ::string &MySed ::replace(std ::string &content)
 
 int MySed ::writeToFile(std ::string content)
 {
-    std::ofstream file(outfile);
+    std::ofstream file(outfile.c_str());
     if (file.is_open() == false)
     {
         std ::cout << "Failed To Open The File " << outfile << std ::endl;

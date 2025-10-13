@@ -78,7 +78,7 @@ void PhoneBook::display_one_cotact(Contact contact, int index, int truncated)
 
 void PhoneBook ::display_header()
 {
-    std ::cout << std ::endl;
+    std ::cout << std ::endl    ;
     std ::cout << SEARCH_HEADER_MESSAGE << std ::endl;
 }
 PhoneBook::PhoneBook() {}
