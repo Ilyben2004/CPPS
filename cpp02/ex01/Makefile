@@ -1,8 +1,8 @@
 PRGRM = fixed_point
-SRCS =  main.cpp Fixed.cpp
+SRCS =  main.cpp Fixed.cpp utils.cpp
 OSRCS = $(SRCS:.cpp=.o)
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror --std=c++98
+CXXFLAGS =  --std=c++98 #-Wall -Wextra -Werror
 
 all : $(PRGRM)
 

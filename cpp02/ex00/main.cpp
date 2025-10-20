@@ -1,13 +1,13 @@
-#include "FixedPoint.hpp"
+#include "Fixed.hpp"
 
-int main()
+int main(void)
 {
-    int a = 1;
-    FixedPoint f;
-    f.set_fixed_p(a);
-    FixedPoint ff(f);
-    a = 3;
-    f.set_fixed_p(a);
-    std ::cout << " ff = " << ff.get_fixed_p() << std ::endl;
-    std ::cout << " f = " << f.get_fixed_p() << std ::endl;
+    Fixed a;
+    Fixed b(a);
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return 0;
 }
