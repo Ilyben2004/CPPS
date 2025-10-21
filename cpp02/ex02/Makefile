@@ -6,7 +6,7 @@
 #    By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/14 14:04:34 by ibennaje          #+#    #+#              #
-#    Updated: 2025/10/14 14:04:36 by ibennaje         ###   ########.fr        #
+#    Updated: 2025/10/20 12:28:49 by ibennaje         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,3 +27,5 @@ clean :
 
 fclean : clean
 	rm -rf $(PRGRM)
+
+re : fclean all

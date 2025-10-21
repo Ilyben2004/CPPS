@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/10/20 12:29:40 by ibennaje          #+#    #+#              #
+#    Updated: 2025/10/20 12:29:41 by ibennaje         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 PRGRM = fixed_point
 SRCS =  main.cpp Fixed.cpp
 OSRCS = $(SRCS:.cpp=.o)
@@ -15,3 +27,5 @@ clean :
 
 fclean : clean
 	rm -rf $(PRGRM)
+
+re : fclean all

@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:04:17 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/14 15:26:03 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/10/20 11:24:09 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
     Fixed(const int a);
     Fixed(const float a);
 
-    Fixed &operator=(const Fixed &f);
+    Fixed &operator=(const Fixed &f) ;
     Fixed &operator*(const Fixed &f);
     Fixed &operator/(const Fixed &f);
     Fixed &operator-(const Fixed &f);
@@ -51,8 +51,8 @@ public:
     int toInt() const;
 
     static Fixed &min(Fixed &f1, Fixed &f2);
-    static Fixed &min(const Fixed &f1, const Fixed &f2);
+    const static Fixed &min(const Fixed &f1, const Fixed &f2);
     static Fixed &max(Fixed &f1, Fixed &f2);
-    static Fixed &max(const Fixed &f1, const Fixed &f2) ;
+    static const Fixed &max(const Fixed &f1, const Fixed &f2);
     ~Fixed();
 };
