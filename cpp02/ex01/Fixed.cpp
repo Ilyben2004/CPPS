@@ -6,12 +6,12 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 12:29:33 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/20 12:29:34 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/10/21 17:40:51 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Fixed.hpp"
+#include "utils.hpp"
 
 Fixed ::Fixed()
 {
@@ -34,7 +34,7 @@ Fixed ::Fixed(const int a)
 Fixed ::Fixed(const float a)
 {
     std::cout << "Float constructor called" << std ::endl;
-    float new_float = roundf((a * 256));
+    float new_float = roundf((a * ft_pow(2, 8)));
     fixed_p = new_float;
 }
 
@@ -65,13 +65,11 @@ void Fixed ::setRawBits(int const raw)
 float Fixed ::toFloat() const
 {
     float value;
-    value = ((float)fixed_p / (float)(256));
+    value = ((float)fixed_p / (float)(ft_pow(2, 8)));
     return (value);
 }
 
 int Fixed ::toInt() const
 {
-    int value;
-    value = fixed_p >> 8;
-    return (value);
+    return (toFloat());
 }

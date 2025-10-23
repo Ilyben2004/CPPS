@@ -6,11 +6,12 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:04:05 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/20 11:51:26 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/10/21 17:29:37 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include "utils.hpp"
 
 // ----------------------------------- constructors --------------------------------------------//
 
@@ -31,8 +32,9 @@ Fixed ::Fixed(const int a)
 
 Fixed ::Fixed(const float a)
 {
-    float new_float = roundf((a * 256));
+    float   new_float = roundf((a * ft_pow(2,size)));
     fixed_p = new_float;
+    
 }
 // ----------------------------------- Member Functions  --------------------------------------------//
 
@@ -46,9 +48,9 @@ void Fixed ::setRawBits(int const raw)
     this->fixed_p = raw;
 }
 
-float Fixed ::toFloat() const { return (((float)fixed_p / (float)(256))); }
+float Fixed ::toFloat() const { return (((float)fixed_p / (float)(ft_pow(2,size)))); }
 
-int Fixed ::toInt() const { return (fixed_p >> 8); }
+int Fixed ::toInt() const { return (toFloat()); }
 
 // ----------------------------------- Operators  --------------------------------------------//
 Fixed &Fixed::operator=(const Fixed &f)
@@ -66,7 +68,7 @@ Fixed &Fixed::operator*(const Fixed &f)
     a = toFloat();
     b = f.toFloat();
     result = a * b;
-    result = roundf(result * 256);
+    result = roundf(result * ft_pow(2,size));
     this->fixed_p = result;
     return (*this);
 }

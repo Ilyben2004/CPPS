@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.cpp                                          :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:04:39 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/21 17:28:47 by ibennaje         ###   ########.fr       */
+/*   Created: 2025/10/23 12:20:18 by ibennaje          #+#    #+#             */
+/*   Updated: 2025/10/23 12:26:10 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.hpp"
+#include "ClapTrap.hpp"
 
-std ::ostream &operator<<(std ::ostream &out, Fixed const &c)
+class FragTrap : public ClapTrap
 {
-    return (out << c.toFloat());
-}
 
-int ft_pow(int a, int b)
-{
-    int pow = 1;
-    while (b--)
-    {
-        pow = pow * a;
-    }
-    return (pow);
-}
+public:
+    FragTrap(std ::string name);
+    FragTrap();
+    ~FragTrap();
+    void highFivesGuys(void);
+};

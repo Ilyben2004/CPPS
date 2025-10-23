@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.cpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:04:39 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/21 17:28:47 by ibennaje         ###   ########.fr       */
+/*   Created: 2025/10/23 12:16:07 by ibennaje          #+#    #+#             */
+/*   Updated: 2025/10/23 12:16:08 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.hpp"
+#pragma once
 
-std ::ostream &operator<<(std ::ostream &out, Fixed const &c)
-{
-    return (out << c.toFloat());
-}
+#include "ClapTrap.hpp"
 
-int ft_pow(int a, int b)
+class ScavTrap : public ClapTrap
 {
-    int pow = 1;
-    while (b--)
-    {
-        pow = pow * a;
-    }
-    return (pow);
-}
+
+public:
+    ScavTrap(std ::string name);
+    ScavTrap();
+    ~ScavTrap();
+
+
+    void guardGate();
+    void attack(const std ::string &target);
+};

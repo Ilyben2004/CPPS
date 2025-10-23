@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:04:39 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/21 17:28:47 by ibennaje         ###   ########.fr       */
+/*   Created: 2025/10/22 15:05:45 by ibennaje          #+#    #+#             */
+/*   Updated: 2025/10/23 12:13:32 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-std ::ostream &operator<<(std ::ostream &out, Fixed const &c)
+int main()
 {
-    return (out << c.toFloat());
-}
-
-int ft_pow(int a, int b)
-{
-    int pow = 1;
-    while (b--)
-    {
-        pow = pow * a;
-    }
-    return (pow);
+    ScavTrap  claptrap = ScavTrap ("ILYAS");
+    claptrap.setDamage(2);
+    claptrap.attack("SRY");
+    claptrap.beRepaired(10);
+    return 0;
 }
