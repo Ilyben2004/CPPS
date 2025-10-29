@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 12:20:25 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/23 12:34:02 by ibennaje         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "FragTrap.hpp"
 
 //-----------------------------------CONSTRUCTOSRS--------------------------------//
@@ -24,10 +12,28 @@ FragTrap ::FragTrap()
 
 FragTrap ::FragTrap(std ::string name) : ClapTrap(name)
 {
-    std ::cout << "COnstructor With Name Called ClapTrap" << std ::endl;
+    std ::cout << "Constructor With Name Called FragTrap" << std ::endl;
     health = 100;
     energy = 100;
     damage = 30;
+}
+
+FragTrap ::FragTrap(const FragTrap &fragtrap)
+{
+    std ::cout << "Copy Constructor Called FragTrap" << std ::endl;
+    *this = fragtrap;
+}
+//-----------------------------------  Assignment Operator --------------------------------//
+
+FragTrap &FragTrap ::operator=(const FragTrap &fragtrap)
+{
+    if (this == &fragtrap)
+        return (*this);
+    this->setDamage(fragtrap.getDamage());
+    this->setEnergy(fragtrap.getEnergy());
+    this->setHealth(fragtrap.getHealth());
+    this->setName(fragtrap.getName());
+    return (*this);
 }
 
 // ------------------------------------------- METHODS --------------------------------------//

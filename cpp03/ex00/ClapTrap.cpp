@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 15:06:14 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/23 11:08:02 by ibennaje         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ClapTrap.hpp"
 
 //-----------------------------------CONSTRUCTOSRS--------------------------------//
@@ -30,15 +18,34 @@ ClapTrap ::ClapTrap(std ::string _name)
     name = _name;
 }
 
+ClapTrap ::ClapTrap(const ClapTrap &claptrap)
+{
+    std ::cout << "COnstructor With Name Called ClapTrap" << std ::endl;
+    *this = claptrap;
+}
+
+//-----------------------------------  Assignment Operator --------------------------------//
+
+ClapTrap &ClapTrap ::operator=(const ClapTrap claptrap)
+{
+    if (this == &claptrap)
+        return (*this);
+    this->setDamage(claptrap.getDamage());
+    this->setEnergy(claptrap.getEnergy());
+    this->setHealth(claptrap.getHealth());
+    this->setName(claptrap.getName());
+    return (*this);
+}
+
 //-----------------------------------  Getters AND Setters --------------------------------//
 
 void ClapTrap ::setName(std ::string name) { this->name = name; }
 
-void ClapTrap ::setDamage(int damage) { this->damage = damage; }
+void ClapTrap ::setDamage(unsigned int damage) { this->damage = damage; }
 
-void ClapTrap ::setEnergy(int energy) { this->energy = energy; }
+void ClapTrap ::setEnergy(unsigned int energy) { this->energy = energy; }
 
-void ClapTrap ::setHealth(int health) { this->health = health; }
+void ClapTrap ::setHealth(unsigned int health) { this->health = health; }
 
 std ::string ClapTrap ::getName() const { return name; }
 
@@ -57,19 +64,27 @@ void ClapTrap ::attack(const std ::string &target)
         std ::cout << "ClapTrap " << this->name << "has 0 " << (health <= 0 ? "health" : "") << (energy <= 0 ? "And 0 energy" : "") << std ::endl;
         return;
     }
-    std ::cout << "ClapTrap " << this->name << " attacks " << target << " causing points of damage!" << std ::endl;
+    std ::cout << "ClapTrap " << this->name << " attacks " << target << " causing "<< damage <<" points of damage!" << std ::endl;
     energy--;
 }
 
 void ClapTrap ::takeDamage(unsigned int amount)
 {
-    if (health <= 0)
+    if (health > 0)
     {
-        std ::cout << "ClapTrap " << this->name << " already dead" << std ::endl;
-        return;
+        if (amount > health)
+        {
+            std ::cout << "ClapTrap " << name << " damaged " << health << std ::endl;
+            health = 0;
+        }
+        else
+        {
+            std ::cout << "ClapTrap " << name << " damaged " << amount << std ::endl;
+            health = health - amount;
+        }
     }
-    std ::cout << "ClapTrap " << this->name << " damaged " << amount << " of his health!" << std ::endl;
-    health -= amount;
+    else
+        std ::cout << "ClapTrap " << name << " Already Dead" << std ::endl;
 }
 void ClapTrap ::beRepaired(unsigned int amount)
 {

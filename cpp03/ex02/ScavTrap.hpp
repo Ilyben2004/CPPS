@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 12:16:07 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/23 12:16:08 by ibennaje         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #pragma once
 
 #include "ClapTrap.hpp"
@@ -21,7 +9,9 @@ public:
     ScavTrap(std ::string name);
     ScavTrap();
     ~ScavTrap();
+    ScavTrap(const ScavTrap &scarvtrap);
 
+    ScavTrap &operator=(const ScavTrap &scarvtrap);
 
     void guardGate();
     void attack(const std ::string &target);

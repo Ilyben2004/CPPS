@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 12:16:00 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/23 12:16:01 by ibennaje         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ScavTrap.hpp"
 
 //-----------------------------------CONSTRUCTOSRS--------------------------------//
@@ -27,6 +15,25 @@ ScavTrap ::ScavTrap()
     health = 100;
     energy = 50;
     damage = 20;
+}
+
+ScavTrap ::ScavTrap(const ScavTrap &scarvtrap)
+{
+    std ::cout << "Copy Constructor Called ScavTrap" << std ::endl;
+    *this = scarvtrap;
+}
+
+//-----------------------------------  Assignment Operator --------------------------------//
+
+ScavTrap &ScavTrap ::operator=(const ScavTrap &scarvtrap)
+{
+    if (this == &scarvtrap)
+        return (*this);
+    this->setDamage(scarvtrap.getDamage());
+    this->setEnergy(scarvtrap.getEnergy());
+    this->setHealth(scarvtrap.getHealth());
+    this->setName(scarvtrap.getName());
+    return (*this);
 }
 
 // ------------------------------------------- METHODS --------------------------------------//
