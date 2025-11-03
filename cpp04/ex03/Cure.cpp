@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 10:27:00 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/03 10:53:43 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/03 14:13:39 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 Cure ::Cure()
 {
     std ::cout << "Default Constructor Called Cure" << std ::endl;
+    this->type = "cure";
 }
 
 Cure ::Cure(const Cure &cure) : AMateria(cure)
@@ -46,7 +47,7 @@ AMateria *Cure ::clone() const
     *cure = *this;
     return (cure);
 }
-void Cure ::use(Icharacter &target)
+void Cure ::use(ICharacter &target)
 {
     std ::cout << "void Cure :: use(Icharacter &target To Implement " << std ::endl;
 }

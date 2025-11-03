@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 10:27:00 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/03 10:57:02 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/03 14:13:27 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 Ice ::Ice()
 {
     std ::cout << "Default Constructor Called Ice" << std ::endl;
+    this->type = "ice";
 }
 
 Ice ::Ice(const Ice &ice) : AMateria(ice)
@@ -47,8 +48,9 @@ AMateria *Ice ::clone() const
     return (ice);
 }
 
-void Ice ::use(Icharacter &target)
+void Ice ::use(ICharacter &target)
 {
+    
 }
 
 //--------------------------------------------- Destructor ------------------------------------------------

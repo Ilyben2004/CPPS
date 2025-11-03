@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:04:08 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/03 10:34:52 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/03 14:12:54 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <string>
 #include <iostream>
 
-class Icharacter;
+class ICharacter;
+
 class AMateria
 {
 protected:
@@ -28,7 +29,7 @@ public:
     const std :: string & getType() const;
     void setType(const std :: string &type);
     virtual AMateria * clone() const = 0;
-    virtual void use(Icharacter &target);
+    virtual void use(ICharacter &target);
     
     virtual ~AMateria();
 };

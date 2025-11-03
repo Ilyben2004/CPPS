@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 09:57:33 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/03 10:17:11 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/03 14:15:17 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ const std :: string & AMateria :: getType() const
     return(this->type);
 }
 
-void AMateria :: use(Icharacter &target)
+void AMateria :: use(ICharacter &target)
 {
     (void)(target);
 }
