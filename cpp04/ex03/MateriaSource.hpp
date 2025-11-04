@@ -6,10 +6,11 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 14:40:34 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/03 15:24:31 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:49:42 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource
@@ -21,8 +22,8 @@ public:
     MateriaSource(const MateriaSource &materia_source);
 
     MateriaSource &operator=(const MateriaSource &materia_source);
-    void learnMateria(AMateria *m) override;
-    AMateria *createMateria(std ::string const &type) override;
+    void learnMateria(AMateria *m) ;
+    AMateria *createMateria(std ::string const &type) ;
 
     ~MateriaSource();
 };

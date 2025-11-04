@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 10:27:00 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/03 14:13:27 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/03 18:49:27 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ AMateria *Ice ::clone() const
 
 void Ice ::use(ICharacter &target)
 {
+        std ::cout << "heals "<<target.getName() <<"'s wounds"<<std::endl;
+
     
 }
 

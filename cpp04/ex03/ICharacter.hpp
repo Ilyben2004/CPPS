@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Icharacter.hpp                                     :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:04:43 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/03 11:05:00 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:54:26 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#pragma once
 
+#include <iostream>
+#include <string>
+
+class AMateria;
 class ICharacter
 {
 public:

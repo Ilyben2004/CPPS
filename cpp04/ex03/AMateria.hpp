@@ -6,15 +6,14 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:04:08 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/03 14:12:54 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:46:30 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
 #include <iostream>
-
-class ICharacter;
+#include "ICharacter.hpp"
 
 class AMateria
 {

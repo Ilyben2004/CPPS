@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 10:27:00 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/03 14:13:39 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/03 18:48:32 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Cure ::Cure(const Cure &cure) : AMateria(cure)
 {
     std ::cout << "Copy Constructor Called Cure" << std ::endl;
 }
-Cure ::Cure(const std ::string &type) : Cure(type)
+Cure ::Cure(const std ::string &type) : AMateria(type)
 {
     std ::cout << "Constructor With Args Called Cure" << std ::endl;
 }
@@ -32,6 +32,7 @@ Cure ::Cure(const std ::string &type) : Cure(type)
 
 Cure &Cure ::operator=(const Cure &cure)
 {
+    std::cout << "Copy Assigment Operatpr Cure" << std::endl;
     if (this != &cure)
     {
         this->type = cure.type;
@@ -49,7 +50,7 @@ AMateria *Cure ::clone() const
 }
 void Cure ::use(ICharacter &target)
 {
-    std ::cout << "void Cure :: use(Icharacter &target To Implement " << std ::endl;
+    std ::cout << "Shot an ice bolt at " << target.getName() << std ::endl;
 }
 //------------------------------------------------- Destructor -----------------------------------------------
 

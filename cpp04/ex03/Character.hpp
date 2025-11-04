@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,12 +6,14 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:05:38 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/03 14:14:08 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/03 15:53:52 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#pragma once
 #include "ICharacter.hpp"
+#include <iostream>
+#include <string>
 
 class Character : public ICharacter
 {
@@ -27,10 +28,10 @@ public:
     Character(const std :: string &name);
     
     Character &operator = (const Character &character);
-    std :: string const &getName() const override;
-    void equip(AMateria * m) override;
-    void unequip(int idx) override;
-    void use(int idx , ICharacter & target) override;
+    std :: string const &getName() const ;
+    void equip(AMateria * m) ;
+    void unequip(int idx) ;
+    void use(int idx , ICharacter & target) ;
 
     ~Character();
 };

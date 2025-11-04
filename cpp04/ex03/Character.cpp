@@ -6,12 +6,12 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:51:39 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/03 14:30:17 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/04 11:02:21 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-
+#include "AMateria.hpp"
 //------------------------------------- Constructors -----------------------------------------
 
 Character ::Character()
@@ -53,7 +53,8 @@ Character &Character ::operator=(const Character &character)
                 this->inventory[i] = character.inventory[i]->clone();
             else
                 this->inventory[i] = NULL;
-            this->is_equip[i++] = character.is_equip[i];
+            this->is_equip[i] = character.is_equip[i];
+            i++;
         }
     }
     return (*this);
@@ -75,7 +76,7 @@ void Character::equip(AMateria *m)
             if (inventory[i] != NULL)
                 delete inventory[i];
             inventory[i] = m->clone();
-            std::cout << "Amteria With Type" << m->getType() << "equiped Sucessfully" << std ::endl;
+            std::cout << "Amteria With Type " << m->getType() << " equiped Sucessfully at index" << i << std ::endl;
             is_equip[i] = true;
             return;
         }
@@ -86,26 +87,26 @@ void Character::equip(AMateria *m)
 void Character::unequip(int idx)
 {
     is_equip[idx] = false;
-    
 }
 
 void Character::use(int idx, ICharacter &target)
 {
     if (is_equip[idx] == true)
     {
-        std::cout << "inventory at index " << idx << " does not exist" << std::endl;
+        inventory[idx]->use((target));
         return;
     }
-    inventory[idx]->use((target));
+    std::cout << "inventory at index " << idx << " does not exist" << std::endl;
 }
 
-Character::Character()
+Character::~Character()
 {
     std::cout << "Destructor Called Character" << std::endl;
     int i = 0;
     while (i < 4)
     {
-        if (!(inventory[i] == NULL))
+        if ((inventory[i] != NULL))
             delete inventory[i];
+        i++;
     }
 }
