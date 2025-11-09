@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:04:43 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/03 15:54:26 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/07 14:29:35 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 #include <iostream>
 #include <string>
-
 class AMateria;
 class ICharacter
 {

@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Node.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 14:40:34 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/07 14:28:02 by ibennaje         ###   ########.fr       */
+/*   Created: 2025/11/07 14:08:29 by ibennaje          #+#    #+#             */
+/*   Updated: 2025/11/09 12:10:06 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "IMateriaSource.hpp"
 #include <cstddef>
 
-class MateriaSource : public IMateriaSource
+class AMateria;
+struct Node
 {
-private:
-    AMateria * learned_amateria[4];
-public:
-    MateriaSource();
-    MateriaSource(const MateriaSource &materia_source);
+    AMateria *data;
+    Node *next;
 
-    MateriaSource &operator=(const MateriaSource &materia_source);
-    void learnMateria(AMateria *m) ;
-    AMateria *createMateria(std ::string const &type) ;
+    Node(AMateria *_data);
 
-    ~MateriaSource();
 };

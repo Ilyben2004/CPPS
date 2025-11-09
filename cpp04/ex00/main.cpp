@@ -12,6 +12,7 @@ int main(void)
         std::cout << i->getType() << " " << std::endl;
         i->makeSound();
         j->makeSound();
+        i->Animal::makeSound();
         meta->makeSound();
 
         delete i;

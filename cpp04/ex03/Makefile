@@ -6,12 +6,13 @@
 #    By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/20 12:29:40 by ibennaje          #+#    #+#              #
-#    Updated: 2025/11/03 15:37:30 by ibennaje         ###   ########.fr        #
+#    Updated: 2025/11/07 19:58:14 by ibennaje         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 PRGRM = AMateria	
-SRCS = main.cpp AMateria.cpp  Character.cpp  Cure.cpp  Ice.cpp  MateriaSource.cpp
+SRCS = AMateria.cpp  AMateriaList.cpp  Character.cpp  Cure.cpp  Ice.cpp  main.cpp  MateriaSource.cpp  Node.cpp
+
 OSRCS = $(SRCS:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror --std=c++98

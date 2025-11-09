@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 14:43:32 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/04 11:03:10 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/09 14:49:47 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,16 @@ void MateriaSource::learnMateria(AMateria *m)
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
     int i = 0;
+    AMateria * clone;
     while ((i < 4))
     {
         if (learned_amateria[i] != NULL)
         {
             if (type.compare(learned_amateria[i]->getType()) == 0)
-                return (learned_amateria[i]->clone());
+            {
+                clone = learned_amateria[i]->clone();
+                return (clone);
+            }
         }
         i++;
     }
@@ -77,12 +81,5 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 
 MateriaSource::~MateriaSource()
 {
-    int i = 0;
     std ::cout << "Default Destructor Called MateriSource" << std::endl;
-    while (i < 4)
-    {
-        if (this->learned_amateria[i] != NULL)
-            delete learned_amateria[i];
-        i++;
-    }
 }

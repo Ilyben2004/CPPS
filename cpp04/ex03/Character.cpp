@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:51:39 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/04 11:02:21 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/09 15:08:49 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ Character ::Character()
     std ::cout << "Default Constructor Called Character" << std ::endl;
     while (i < 4)
     {
-        inventory[i] = NULL;
-        is_equip[i++] = false;
+        inventory[i++] = NULL;
     }
 }
 Character ::Character(const Character &character)
@@ -36,8 +35,7 @@ Character::Character(const std::string &name)
     this->name = name;
     while (i < 4)
     {
-        inventory[i] = NULL;
-        is_equip[i++] = false;
+        inventory[i++] = NULL;
     }
 }
 //------------------------------------- Copy Assigment Operator -----------------------------------------
@@ -53,7 +51,8 @@ Character &Character ::operator=(const Character &character)
                 this->inventory[i] = character.inventory[i]->clone();
             else
                 this->inventory[i] = NULL;
-            this->is_equip[i] = character.is_equip[i];
+            if (this->inventory[i] != NULL)
+                this->inventory[i]->addNode();
             i++;
         }
     }
@@ -71,13 +70,12 @@ void Character::equip(AMateria *m)
     int i = 0;
     while (i < 4)
     {
-        if (is_equip[i] == false)
+        if (inventory[i] == NULL)
         {
-            if (inventory[i] != NULL)
-                delete inventory[i];
             inventory[i] = m->clone();
+            inventory[i]->addNode();
+            m->addNode();
             std::cout << "Amteria With Type " << m->getType() << " equiped Sucessfully at index" << i << std ::endl;
-            is_equip[i] = true;
             return;
         }
         i++;
@@ -86,12 +84,12 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-    is_equip[idx] = false;
+    inventory[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter &target)
 {
-    if (is_equip[idx] == true)
+    if (inventory[idx] != NULL)
     {
         inventory[idx]->use((target));
         return;
@@ -102,11 +100,4 @@ void Character::use(int idx, ICharacter &target)
 Character::~Character()
 {
     std::cout << "Destructor Called Character" << std::endl;
-    int i = 0;
-    while (i < 4)
-    {
-        if ((inventory[i] != NULL))
-            delete inventory[i];
-        i++;
-    }
 }
