@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 14:31:08 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/09 15:15:26 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:13:15 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@
 AMateriaList::AMateriaList()
 {
     this->head = NULL;
+}
+
+AMateriaList::AMateriaList(const AMateriaList & amateria_list)
+{
+    *this = amateria_list;
+}
+
+AMateriaList & AMateriaList::operator =(const AMateriaList & amateria_list)
+{
+    if (this != &amateria_list)
+        this->head = amateria_list.head;
+    return (*this);
 }
 
 
@@ -46,7 +58,6 @@ void AMateriaList::addNode(Node *node)
         front = front->next;
     front->next = node;
     node->next = NULL;
-    std::cout<< "----------------------------------------------------------------------"<<std::endl;
 }
 AMateriaList::~AMateriaList()
 {
@@ -56,7 +67,7 @@ AMateriaList::~AMateriaList()
         to_clean = head;
         head = head->next;
         if (to_clean->data)
-            delete static_cast<AMateria *>( to_clean->data);
+            delete(AMateria *)( to_clean->data);
         delete to_clean;
     }
 }

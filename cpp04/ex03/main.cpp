@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 15:38:04 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/09 15:20:44 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:08:56 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,17 @@ int main()
     me->equip(tmp);
     me->equip(tmp);
     me->equip(tmp);
+    me->equip(tmp);
+    me->equip(tmp);
+    me->equip(tmp);
+    me->equip(tmp);
+    me->unequip(0);
+    me->unequip(0);
+    me->equip(tmp);
     ICharacter *bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
-    delete bob; 
+    delete bob;
     delete me;
     delete src;
 }

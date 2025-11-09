@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:51:39 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/09 15:12:54 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:08:08 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void Character::equip(AMateria *m)
             return;
         }
         i++;
-    }
+    }   
 }
 
 void Character::unequip(int idx)
