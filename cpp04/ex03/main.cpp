@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 15:38:04 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/09 15:01:12 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/09 15:20:44 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 
 int main()
 {
-    
+    Ice *ice = new Ice();
+    ice->getType();
     IMateriaSource *src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());

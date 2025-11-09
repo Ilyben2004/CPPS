@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 09:57:33 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/09 15:06:23 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/09 15:19:44 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,13 @@ AMateria &AMateria ::operator=(const AMateria &amateria)
     return (*this);
 }
 
+void * AMateria::operator new(std::size_t size)
+{
+    void * amateria = ::operator new(size);
+    AMateria::addNode(amateria);
+    return(amateria);
+}
+
 //---------------------------------------------- Methods --------------------------------------------------
 
 void AMateria ::setType(const std ::string &type)
@@ -58,9 +65,9 @@ void AMateria ::use(ICharacter &target)
     (void)(target);
 }
 
-void AMateria::addNode()
+void AMateria::addNode(void *data)
 {
-    (AMateria::amateria_garbage).addNode(new Node(this));
+    (AMateria::amateria_garbage).addNode(new Node(data));
 }
 
 //------------------------------------- Destructor --------------------------------------------------

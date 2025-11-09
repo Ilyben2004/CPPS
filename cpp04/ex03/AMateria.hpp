@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:04:08 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/09 15:06:48 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/09 15:18:16 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ public:
     AMateria(const AMateria &amateria);
     AMateria(const std ::string &type);
     
-    void addNode(); 
+    static void *operator new (std::size_t size);
+    static void addNode(void *data); 
     AMateria & operator=(const AMateria & amteria);
     const std :: string & getType() const;
     void setType(const std :: string &type);

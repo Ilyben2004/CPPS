@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:51:39 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/09 15:08:49 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/09 15:12:54 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ Character &Character ::operator=(const Character &character)
                 this->inventory[i] = character.inventory[i]->clone();
             else
                 this->inventory[i] = NULL;
-            if (this->inventory[i] != NULL)
-                this->inventory[i]->addNode();
             i++;
         }
     }
@@ -73,8 +71,6 @@ void Character::equip(AMateria *m)
         if (inventory[i] == NULL)
         {
             inventory[i] = m->clone();
-            inventory[i]->addNode();
-            m->addNode();
             std::cout << "Amteria With Type " << m->getType() << " equiped Sucessfully at index" << i << std ::endl;
             return;
         }
