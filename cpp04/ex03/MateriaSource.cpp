@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 14:43:32 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/09 14:49:47 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:42:23 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@
 MateriaSource::MateriaSource()
 {
     int i = 0;
-    std::cout << "Default Constructor called MateriaSource" << std::endl;
     while (i < 4)
         learned_amateria[i++] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &materia_source)
 {
-    std::cout << "Default Constructor called MateriaSource" << std::endl;
     *this = materia_source;
 }
 //------------------------------------ Copy Assigment Operator ---------------------------
@@ -81,5 +79,4 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 
 MateriaSource::~MateriaSource()
 {
-    std ::cout << "Default Destructor Called MateriSource" << std::endl;
 }

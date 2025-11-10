@@ -1,6 +1,8 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main(void)
 {
@@ -48,5 +50,13 @@ int main(void)
         std::cout << animal_second.getType() << " " << std::endl;
         animal_first.makeSound();
         animal_second.makeSound();
+    }
+    //------------------ Wrong Animal Test ----------------------------
+    std ::cout << "----------------------------------------------------\n"
+               << std ::endl;
+    {
+        WrongAnimal *wa = new WrongCat();
+        wa->makeSound();
+        delete wa;
     }
 }

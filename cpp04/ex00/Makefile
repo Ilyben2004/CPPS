@@ -6,12 +6,12 @@
 #    By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/20 12:29:40 by ibennaje          #+#    #+#              #
-#    Updated: 2025/11/10 10:11:14 by ibennaje         ###   ########.fr        #
+#    Updated: 2025/11/10 14:33:35 by ibennaje         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 PRGRM = animal
-SRCS =  main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS =  main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
 OSRCS = $(SRCS:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror --std=c++98

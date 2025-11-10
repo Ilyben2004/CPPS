@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:51:39 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/11/09 21:08:08 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:42:38 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 Character ::Character()
 {
     int i = 0;
-    std ::cout << "Default Constructor Called Character" << std ::endl;
     while (i < 4)
     {
         inventory[i++] = NULL;
@@ -25,13 +24,11 @@ Character ::Character()
 }
 Character ::Character(const Character &character)
 {
-    std ::cout << "Copy Constructor Called Character" << std ::endl;
     *this = character;
 }
 Character::Character(const std::string &name)
 {
     int i = 0;
-    std ::cout << "Constructor With Args Called Character" << std ::endl;
     this->name = name;
     while (i < 4)
     {
@@ -71,7 +68,6 @@ void Character::equip(AMateria *m)
         if (inventory[i] == NULL)
         {
             inventory[i] = m->clone();
-            std::cout << "Amteria With Type " << m->getType() << " equiped Sucessfully at index" << i << std ::endl;
             return;
         }
         i++;
@@ -95,5 +91,4 @@ void Character::use(int idx, ICharacter &target)
 
 Character::~Character()
 {
-    std::cout << "Destructor Called Character" << std::endl;
 }
