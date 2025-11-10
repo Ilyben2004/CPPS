@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 10:40:33 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/31 12:14:40 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/10 11:10:03 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(void)
     {
         int size = 20;
         int i = 0;
-        Animal **array = new Animal *[size];
+	Animal *array[size];
         while (i < size)
         {
             if (i > (size / 2))
@@ -47,7 +47,6 @@ int main(void)
             delete array[i];
             i++;
         }
-        delete[] array;
     }
     std ::cout << "\n\n------------------------------------------------------------\n"
                << std::endl;

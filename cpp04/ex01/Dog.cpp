@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 10:27:53 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/31 12:04:45 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/10 11:02:52 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ Dog ::Dog()
 {
     std::cout << "Dog Default Constructor Called " << std::endl;
     this->type = "Dog";
-    brain = new Brain();
+    brain = NULL;
 }
 
 Dog ::Dog(const Dog &dog)
 {
     std::cout << "Dog Copy Constructor Called " << std::endl;
     *this = dog;
-    brain = new Brain();
+    brain = NULL;
 }
 
 //--------------------------------------- Operators ----------------------------------------------------
@@ -48,10 +48,13 @@ void Dog ::makeSound() const
     std ::cout << "Dog barks" << std ::endl;
 }
 
+Brain *Dog::getBrain() const { return (this->brain); }
+
+void Dog::setBrain(Brain *brain) { this->brain = brain; }
+
 //--------------------------------------- Destructor-------------------------------------------------
 
 Dog ::~Dog()
 {
-    delete brain;
     std::cout << "Dog Destructor Called " << std::endl;
 }

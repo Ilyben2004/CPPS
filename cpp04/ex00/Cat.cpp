@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 15:59:39 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/31 10:31:16 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/10 10:17:15 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Cat ::Cat(const Cat &cat)
 
 //--------------------------------------- Operators ----------------------------------------------------
 
-Cat &Cat::operator=(const Cat & cat)
+Cat &Cat::operator=(const Cat &cat)
 {
     if ((this != &cat))
     {
@@ -44,6 +44,7 @@ void Cat ::makeSound() const
 
     std ::cout << "Cat Meows" << std ::endl;
 }
+
 
 //--------------------------------------- Destructor-------------------------------------------------
 

@@ -6,11 +6,11 @@
 #    By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/20 12:29:40 by ibennaje          #+#    #+#              #
-#    Updated: 2025/10/31 10:39:36 by ibennaje         ###   ########.fr        #
+#    Updated: 2025/11/10 10:11:36 by ibennaje         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PRGRM = animal
+PRGRM = noAnimal
 SRCS =  main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OSRCS = $(SRCS:.cpp=.o)
 CXX = c++

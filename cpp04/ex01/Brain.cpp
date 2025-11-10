@@ -22,7 +22,7 @@ Brain &Brain ::operator=(const Brain &brain)
         int i = 0;
         while ((brain.getIdea(++i).empty() == false) && (i < IDEAS_SIZE))
         {
-            this->setIdea(brain.getIdea(i), i);
+            this->setIdea(brain.getIdea(i));
             i++;
         }
     }
@@ -31,16 +31,19 @@ Brain &Brain ::operator=(const Brain &brain)
 
 //----------------------------------- Methods  -----------------------------------//
 
-void Brain ::setIdea(std ::string idea, int index)
+void Brain ::setIdea(std ::string idea)
 {
-    this->ideas[index] = idea;
+    int i = 0;
+    while (this->ideas[i].empty() == false)
+        i++;
+
+    this->ideas[i] = idea;
 }
 
 std ::string Brain::getIdea(int index) const
 {
     return (ideas[index]);
 }
-
 
 //----------------------------------- Destructor -----------------------------------//
 

@@ -6,7 +6,7 @@
 /*   By: ibennaje <ibennaje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 15:59:39 by ibennaje          #+#    #+#             */
-/*   Updated: 2025/10/31 12:04:37 by ibennaje         ###   ########.fr       */
+/*   Updated: 2025/11/10 11:02:21 by ibennaje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ Cat ::Cat()
 {
     std::cout << "Cat Default Constructor Called " << std::endl;
     this->type = "Cat";
-    brain = new Brain();
+    brain = NULL;
 }
 
 Cat ::Cat(const Cat &cat)
 {
     std::cout << "Cat Copy Constructor Called " << std::endl;
     *this = cat;
-    brain = new Brain();
+    brain = NULL;
 }
 
 //--------------------------------------- Operators ----------------------------------------------------
@@ -47,10 +47,13 @@ void Cat ::makeSound() const
     std ::cout << "Cat Meows" << std ::endl;
 }
 
+Brain *Cat::getBrain() const { return (this->brain); }
+
+void Cat::setBrain(Brain *brain) { this->brain = brain; }
+
 //--------------------------------------- Destructor-------------------------------------------------
 
 Cat ::~Cat()
 {
-    delete brain;
     std::cout << "Cat Destructor Called " << std::endl;
 }
